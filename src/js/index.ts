@@ -1,12 +1,5 @@
-interface Person {
-    firstName: string;
-    lastName: string;
-}
-
-function greeter(person: Person): string {
-    return "Hello, " + person.firstName + " " + person.lastName;
-}
-let user: Person = { firstName: "John", lastName: "Doe" };
+import { OrderLinie } from './orderlinie';
 
 let element: HTMLDivElement = <HTMLDivElement> document.getElementById("content");
-element.innerHTML = greeter(user);
+let myClass = new OrderLinie({OrderQty: 1,ProductId: 1,UnitPrice: 100,UnitPriceDiscount: 10});
+element.innerHTML = "Pris: "+ myClass.Udregn();
